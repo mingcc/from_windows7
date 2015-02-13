@@ -16,7 +16,7 @@ endif
 
 if (g:isGUI)
     set cursorline
-    colorscheme wombat
+    colorscheme wombat256
     hi cursorline guibg=#333333
     hi CursorColumn guibg=#333333
     set guifont=DejaVu_Sans_Mono:h14
@@ -197,13 +197,3 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = 'E:\ctags58\ctags'
 
-function! LoadTemplate(extension)
-     execute '0r '$HOME/vimfiles/templates/'.a:extension.'.tpl'
-endfunction
-autocmd BufNewFile *  call LoadTemplate('%:e')
-
-
-augroup testgroup
-    autocmd BufWrite * :echom "Foo"
-    autocmd BufWrite * :echom "Bar"
-augroup END
