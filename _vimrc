@@ -22,18 +22,16 @@ if (g:isGUI)
     set guifont=DejaVu_Sans_Mono:h14
 endif
 
-" added from github website
-vmap <c-c> "+y
 
 "nerdtree settings
 " ===========================
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowBookmarks = 1 
+let NERDTreeMapOpenSplit = 1
 
 " Automatic reloading of .vimrc
 " ==============================
 autocmd! bufwritepost .vimrc source %
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " General 
 " =========
@@ -71,8 +69,6 @@ set softtabstop=4     "tabs key indent by four spaces
 set shiftwidth=4
 set shiftround
 set expandtab         "convert tabs to whitespace
-" map sort function to a key
-vnoremap <Leader>s :sort<CR>
 
 " easier moving of code blocks
 vnoremap < <gv 
@@ -82,7 +78,6 @@ map <c-a> ggVG  " select all
 " filetype
 filetype off 
 filetype plugin indent on
-"filetype plugin on
 
 
 
@@ -141,24 +136,18 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Fixing the copy & paste madness
-" ================================
-" vmap <C-y> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-" nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
-" imap <C-v> <Esc><C-v>a
-
 
 " Syntastic
 " =========
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
-let g:syntastic_javascript_jshint_exec='/usr/local/bin/jshint'
-
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
 
 " Settings for jedi-vim
 " =====================
 let g:jedi#usages_command = "<leader>n"
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
@@ -195,4 +184,4 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 
 "tagbar settings
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_ctags_bin = 'E:\ctags58\ctags'
+let g:tagbar_ctags_bin = 'E:\ctags58\ctags.exe'
