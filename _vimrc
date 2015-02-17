@@ -16,7 +16,7 @@ endif
 
 if (g:isGUI)
     set cursorline
-    colorscheme wombat
+    colorscheme wombat256
     hi cursorline guibg=#333333
     hi CursorColumn guibg=#333333
     set guifont=DejaVu_Sans_Mono:h14
@@ -27,7 +27,6 @@ endif
 " ===========================
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks = 1 
-let NERDTreeMapOpenSplit = 1
 
 " Automatic reloading of .vimrc
 " ==============================
@@ -132,9 +131,9 @@ let delimitMate_expand_cr = 1
 
 " UltiSnips
 " =========
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 
 " Syntastic
@@ -184,4 +183,4 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 
 "tagbar settings
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_ctags_bin = 'E:\ctags58\ctags.exe'
+let g:tagbar_ctags_bin = 'E:\ctags58\ctags'
