@@ -40,7 +40,7 @@ set tags=./tags
 set mouse=a              
 set bs=2                
 set wildmode=list:longest " make TAB behave like in a shell
-
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
 
 " better copy & paste
 " ====================
@@ -106,6 +106,7 @@ set laststatus=2
 " cd ~/.vim/bundle
 " git clone https://github.com/kien/ctrlp.vim
 "let g:ctrip_max_height = 30
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|tmp)$',
   \ 'file': '\v\.(exe|so|dll|pdf|jpg|zip|DATä)$',
@@ -184,3 +185,22 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 "tagbar settings
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = 'E:\ctags58\ctags'
+
+
+nnoremap <space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+
+map <F6> :pyfile %<CR>

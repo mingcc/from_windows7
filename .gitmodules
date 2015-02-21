@@ -1,7 +1,9 @@
 [submodule "vimfiles/bundle/syntastic"]
 	path = vimfiles/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
+[submodule "vimfiles/bundle/vim-powerline"]
+	path = vimfiles/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
 [submodule "vimfiles/bundle/ctrlp.vim"]
-path = vimfiles/bundle/ctrlp.vim:update
-
-    url = https://github.com/kien/ctrlp.vim
+	path = vimfiles/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
