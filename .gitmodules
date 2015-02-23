@@ -1,3 +1,6 @@
 [submodule "vim-powerline"]
 	path = vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline
+[submodule "vimfiles/bundle/jedi-vim"]
+	path = vimfiles/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim

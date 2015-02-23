@@ -159,8 +159,6 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 " autocmd BufRead * normal zM
 
 
-let g:user_emmet_leader_key = '<c-y>'
-
 
 " automatically adding executable bit to bash files
 " =================================================
